@@ -51,14 +51,12 @@ namespace VerdantArc.Infrastructure.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "28c68cfc-5ef4-4e5d-b7f2-5b306f196241",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "ac4ae04f-ea04-4db2-b521-e78a55d76a57",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -257,17 +255,17 @@ namespace VerdantArc.Infrastructure.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "32e1c130-ecd5-439d-97f4-b01f727521b4",
+                            ConcurrencyStamp = "e9c2028c-b872-4cd3-86cc-46fe54afeffc",
                             Email = "admin@verdantarc.ro",
                             EmailConfirmed = true,
-                            FullName = "Administrator System",
+                            FullName = "System Administrator",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@VERDANTARC.RO",
                             NormalizedUserName = "ADMIN@VERDANTARC.RO",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPr2eVV1SuDWiE6TX/W8Msyu5kQ+Mk/qKoOBTkZLrRwrNCxRseKINjtOamZakbp7vg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJxQT7myVr9BNzxO8/4Flg/1nAEMe5ya1cvE/J2uNYIMv8rX/0HaExMPou5pTl5nAA==",
                             PhoneNumberConfirmed = false,
-                            RegisteredAt = new DateTime(2026, 5, 15, 21, 7, 42, 448, DateTimeKind.Utc).AddTicks(8953),
-                            SecurityStamp = "17313b66-8fce-469b-9b4e-4d2e53bd428f",
+                            RegisteredAt = new DateTime(2026, 5, 15, 21, 37, 19, 983, DateTimeKind.Utc).AddTicks(1198),
+                            SecurityStamp = "18317855-7dcd-42b1-8d00-4dc0f7ff98c4",
                             TwoFactorEnabled = false,
                             UserName = "admin@verdantarc.ro"
                         },
@@ -275,17 +273,17 @@ namespace VerdantArc.Infrastructure.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6ad2c4eb-ca4d-47cc-a33e-09a741951ceb",
+                            ConcurrencyStamp = "387db489-776f-44f4-b765-cf7dd9848457",
                             Email = "user@verdantarc.ro",
                             EmailConfirmed = true,
-                            FullName = "Vizitator Frecvent",
+                            FullName = "Frequent Visitor",
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@VERDANTARC.RO",
                             NormalizedUserName = "USER@VERDANTARC.RO",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOENWTVLLYWq2P2hD9LDwfA6Ng2nUpkXJf+usdQmYqYWW5dSm+wIsRaJGeWLyOjL9Q==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMrFieH244203TTvVyIpgJDdCPoBF0yiUmXCLDcRnlJdMOcE6YvVqj7ylOkJ3hmwfg==",
                             PhoneNumberConfirmed = false,
-                            RegisteredAt = new DateTime(2026, 5, 15, 21, 7, 42, 533, DateTimeKind.Utc).AddTicks(9324),
-                            SecurityStamp = "f1555bee-1494-4e67-b043-1f5befd8b494",
+                            RegisteredAt = new DateTime(2026, 5, 15, 21, 37, 20, 68, DateTimeKind.Utc).AddTicks(386),
+                            SecurityStamp = "047cdf6c-5773-4e19-8414-c5334d255ac0",
                             TwoFactorEnabled = false,
                             UserName = "user@verdantarc.ro"
                         });
@@ -338,10 +336,10 @@ namespace VerdantArc.Infrastructure.Migrations
                         {
                             Id = 1,
                             Category = 0,
-                            CommonName = "Urs Brun",
+                            CommonName = "Brown Bear",
                             ConservationStatus = 2,
-                            CreatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8110),
-                            Description = "Cel mai mare mamifer din rezervație.",
+                            CreatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(8989),
+                            Description = "The largest mammal in the reserve.",
                             IsEndemic = false,
                             ScientificName = "Ursus arctos"
                         },
@@ -349,10 +347,10 @@ namespace VerdantArc.Infrastructure.Migrations
                         {
                             Id = 2,
                             Category = 0,
-                            CommonName = "Cerb",
+                            CommonName = "Red Deer",
                             ConservationStatus = 0,
-                            CreatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8118),
-                            Description = "Animal erbivor masiv.",
+                            CreatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9008),
+                            Description = "A large herbivorous animal.",
                             IsEndemic = false,
                             ScientificName = "Cervus elaphus"
                         },
@@ -360,10 +358,10 @@ namespace VerdantArc.Infrastructure.Migrations
                         {
                             Id = 3,
                             Category = 1,
-                            CommonName = "Acvila de munte",
+                            CommonName = "Golden Eagle",
                             ConservationStatus = 0,
-                            CreatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8120),
-                            Description = "Pasăre de pradă impresionantă.",
+                            CreatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9013),
+                            Description = "An impressive bird of prey.",
                             IsEndemic = false,
                             ScientificName = "Aquila chrysaetos"
                         },
@@ -371,10 +369,10 @@ namespace VerdantArc.Infrastructure.Migrations
                         {
                             Id = 4,
                             Category = 2,
-                            CommonName = "Vipera cu corn",
+                            CommonName = "Horned Viper",
                             ConservationStatus = 1,
-                            CreatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8128),
-                            Description = "Șarpe veninos.",
+                            CreatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9018),
+                            Description = "A venomous snake.",
                             IsEndemic = false,
                             ScientificName = "Vipera ammodytes"
                         },
@@ -382,10 +380,10 @@ namespace VerdantArc.Infrastructure.Migrations
                         {
                             Id = 5,
                             Category = 3,
-                            CommonName = "Floare de colț",
+                            CommonName = "Edelweiss",
                             ConservationStatus = 2,
-                            CreatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8130),
-                            Description = "Floare rară montană.",
+                            CreatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9023),
+                            Description = "A rare alpine flower.",
                             IsEndemic = false,
                             ScientificName = "Leontopodium nivale"
                         },
@@ -393,10 +391,10 @@ namespace VerdantArc.Infrastructure.Migrations
                         {
                             Id = 6,
                             Category = 4,
-                            CommonName = "Păstrăv de munte",
+                            CommonName = "Mountain Trout",
                             ConservationStatus = 0,
-                            CreatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8132),
-                            Description = "Pește din apele repezi.",
+                            CreatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9040),
+                            Description = "A fish found in fast-flowing mountain streams.",
                             IsEndemic = false,
                             ScientificName = "Salmo trutta fario"
                         },
@@ -404,10 +402,10 @@ namespace VerdantArc.Infrastructure.Migrations
                         {
                             Id = 7,
                             Category = 5,
-                            CommonName = "Croitorul fagului",
+                            CommonName = "Alpine Longhorn Beetle",
                             ConservationStatus = 2,
-                            CreatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8134),
-                            Description = "Gândac protejat.",
+                            CreatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9042),
+                            Description = "A protected beetle species.",
                             IsEndemic = false,
                             ScientificName = "Rosalia alpina"
                         },
@@ -415,10 +413,10 @@ namespace VerdantArc.Infrastructure.Migrations
                         {
                             Id = 8,
                             Category = 0,
-                            CommonName = "Lup",
+                            CommonName = "Grey Wolf",
                             ConservationStatus = 0,
-                            CreatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8135),
-                            Description = "Prădător în haită.",
+                            CreatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9046),
+                            Description = "A social pack predator.",
                             IsEndemic = false,
                             ScientificName = "Canis lupus"
                         },
@@ -426,10 +424,10 @@ namespace VerdantArc.Infrastructure.Migrations
                         {
                             Id = 9,
                             Category = 0,
-                            CommonName = "Râs",
+                            CommonName = "Eurasian Lynx",
                             ConservationStatus = 0,
-                            CreatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8137),
-                            Description = "Felină sălbatică.",
+                            CreatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9050),
+                            Description = "A wild feline predator.",
                             IsEndemic = false,
                             ScientificName = "Lynx lynx"
                         },
@@ -437,10 +435,10 @@ namespace VerdantArc.Infrastructure.Migrations
                         {
                             Id = 10,
                             Category = 3,
-                            CommonName = "Ghiocel",
+                            CommonName = "Snowdrop",
                             ConservationStatus = 0,
-                            CreatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8138),
-                            Description = "Floare de primăvară.",
+                            CreatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9055),
+                            Description = "A spring-blooming flower.",
                             IsEndemic = false,
                             ScientificName = "Galanthus nivalis"
                         });
@@ -497,44 +495,44 @@ namespace VerdantArc.Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8020),
-                            Description = "Un traseu ușor în jurul lacului principal.",
+                            CreatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(8750),
+                            Description = "An easy trail around the main lake.",
                             DifficultyLevel = 0,
                             DistanceKm = 2.5m,
                             ElevationGainM = 20,
                             EstimatedDurationMinutes = 45,
                             ImageUrl = "https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=2000",
                             IsActive = true,
-                            Name = "Traseul Lacului",
-                            UpdatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8028)
+                            Name = "The Lake Trail",
+                            UpdatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(8768)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8044),
-                            Description = "Traseu mediu prin pădure deasă.",
+                            CreatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(8820),
+                            Description = "A moderate trail through dense forest.",
                             DifficultyLevel = 1,
                             DistanceKm = 8.0m,
                             ElevationGainM = 350,
                             EstimatedDurationMinutes = 180,
                             ImageUrl = "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2000",
                             IsActive = true,
-                            Name = "Poteca Urșilor",
-                            UpdatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8044)
+                            Name = "Bear's Path",
+                            UpdatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(8822)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8046),
-                            Description = "Traseu dificil până în vârful rezervației.",
+                            CreatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(8826),
+                            Description = "A challenging trail up to the highest point of the reserve.",
                             DifficultyLevel = 2,
                             DistanceKm = 15.0m,
                             ElevationGainM = 1200,
                             EstimatedDurationMinutes = 420,
                             ImageUrl = "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2000",
                             IsActive = true,
-                            Name = "Vârful Pietros",
-                            UpdatedAt = new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8047)
+                            Name = "Pietros Peak",
+                            UpdatedAt = new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(8828)
                         });
                 });
 

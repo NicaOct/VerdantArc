@@ -293,8 +293,8 @@ namespace VerdantArc.Infrastructure.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "1", "28c68cfc-5ef4-4e5d-b7f2-5b306f196241", "Admin", "ADMIN" },
-                    { "2", "ac4ae04f-ea04-4db2-b521-e78a55d76a57", "User", "USER" }
+                    { "1", null, "Admin", "ADMIN" },
+                    { "2", null, "User", "USER" }
                 });
 
             migrationBuilder.InsertData(
@@ -302,8 +302,8 @@ namespace VerdantArc.Infrastructure.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FullName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "RegisteredAt", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "1", 0, "32e1c130-ecd5-439d-97f4-b01f727521b4", "admin@verdantarc.ro", true, "Administrator System", false, null, "ADMIN@VERDANTARC.RO", "ADMIN@VERDANTARC.RO", "AQAAAAIAAYagAAAAEPr2eVV1SuDWiE6TX/W8Msyu5kQ+Mk/qKoOBTkZLrRwrNCxRseKINjtOamZakbp7vg==", null, false, new DateTime(2026, 5, 15, 21, 7, 42, 448, DateTimeKind.Utc).AddTicks(8953), "17313b66-8fce-469b-9b4e-4d2e53bd428f", false, "admin@verdantarc.ro" },
-                    { "2", 0, "6ad2c4eb-ca4d-47cc-a33e-09a741951ceb", "user@verdantarc.ro", true, "Vizitator Frecvent", false, null, "USER@VERDANTARC.RO", "USER@VERDANTARC.RO", "AQAAAAIAAYagAAAAEOENWTVLLYWq2P2hD9LDwfA6Ng2nUpkXJf+usdQmYqYWW5dSm+wIsRaJGeWLyOjL9Q==", null, false, new DateTime(2026, 5, 15, 21, 7, 42, 533, DateTimeKind.Utc).AddTicks(9324), "f1555bee-1494-4e67-b043-1f5befd8b494", false, "user@verdantarc.ro" }
+                    { "1", 0, "e9c2028c-b872-4cd3-86cc-46fe54afeffc", "admin@verdantarc.ro", true, "System Administrator", false, null, "ADMIN@VERDANTARC.RO", "ADMIN@VERDANTARC.RO", "AQAAAAIAAYagAAAAEJxQT7myVr9BNzxO8/4Flg/1nAEMe5ya1cvE/J2uNYIMv8rX/0HaExMPou5pTl5nAA==", null, false, new DateTime(2026, 5, 15, 21, 37, 19, 983, DateTimeKind.Utc).AddTicks(1198), "18317855-7dcd-42b1-8d00-4dc0f7ff98c4", false, "admin@verdantarc.ro" },
+                    { "2", 0, "387db489-776f-44f4-b765-cf7dd9848457", "user@verdantarc.ro", true, "Frequent Visitor", false, null, "USER@VERDANTARC.RO", "USER@VERDANTARC.RO", "AQAAAAIAAYagAAAAEMrFieH244203TTvVyIpgJDdCPoBF0yiUmXCLDcRnlJdMOcE6YvVqj7ylOkJ3hmwfg==", null, false, new DateTime(2026, 5, 15, 21, 37, 20, 68, DateTimeKind.Utc).AddTicks(386), "047cdf6c-5773-4e19-8414-c5334d255ac0", false, "user@verdantarc.ro" }
                 });
 
             migrationBuilder.InsertData(
@@ -311,16 +311,16 @@ namespace VerdantArc.Infrastructure.Migrations
                 columns: new[] { "Id", "Category", "CommonName", "ConservationStatus", "CreatedAt", "Description", "ImageUrl", "InatNaturalistId", "IsEndemic", "ScientificName" },
                 values: new object[,]
                 {
-                    { 1, 0, "Urs Brun", 2, new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8110), "Cel mai mare mamifer din rezervație.", null, null, false, "Ursus arctos" },
-                    { 2, 0, "Cerb", 0, new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8118), "Animal erbivor masiv.", null, null, false, "Cervus elaphus" },
-                    { 3, 1, "Acvila de munte", 0, new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8120), "Pasăre de pradă impresionantă.", null, null, false, "Aquila chrysaetos" },
-                    { 4, 2, "Vipera cu corn", 1, new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8128), "Șarpe veninos.", null, null, false, "Vipera ammodytes" },
-                    { 5, 3, "Floare de colț", 2, new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8130), "Floare rară montană.", null, null, false, "Leontopodium nivale" },
-                    { 6, 4, "Păstrăv de munte", 0, new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8132), "Pește din apele repezi.", null, null, false, "Salmo trutta fario" },
-                    { 7, 5, "Croitorul fagului", 2, new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8134), "Gândac protejat.", null, null, false, "Rosalia alpina" },
-                    { 8, 0, "Lup", 0, new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8135), "Prădător în haită.", null, null, false, "Canis lupus" },
-                    { 9, 0, "Râs", 0, new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8137), "Felină sălbatică.", null, null, false, "Lynx lynx" },
-                    { 10, 3, "Ghiocel", 0, new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8138), "Floare de primăvară.", null, null, false, "Galanthus nivalis" }
+                    { 1, 0, "Brown Bear", 2, new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(8989), "The largest mammal in the reserve.", null, null, false, "Ursus arctos" },
+                    { 2, 0, "Red Deer", 0, new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9008), "A large herbivorous animal.", null, null, false, "Cervus elaphus" },
+                    { 3, 1, "Golden Eagle", 0, new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9013), "An impressive bird of prey.", null, null, false, "Aquila chrysaetos" },
+                    { 4, 2, "Horned Viper", 1, new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9018), "A venomous snake.", null, null, false, "Vipera ammodytes" },
+                    { 5, 3, "Edelweiss", 2, new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9023), "A rare alpine flower.", null, null, false, "Leontopodium nivale" },
+                    { 6, 4, "Mountain Trout", 0, new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9040), "A fish found in fast-flowing mountain streams.", null, null, false, "Salmo trutta fario" },
+                    { 7, 5, "Alpine Longhorn Beetle", 2, new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9042), "A protected beetle species.", null, null, false, "Rosalia alpina" },
+                    { 8, 0, "Grey Wolf", 0, new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9046), "A social pack predator.", null, null, false, "Canis lupus" },
+                    { 9, 0, "Eurasian Lynx", 0, new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9050), "A wild feline predator.", null, null, false, "Lynx lynx" },
+                    { 10, 3, "Snowdrop", 0, new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(9055), "A spring-blooming flower.", null, null, false, "Galanthus nivalis" }
                 });
 
             migrationBuilder.InsertData(
@@ -328,9 +328,9 @@ namespace VerdantArc.Infrastructure.Migrations
                 columns: new[] { "Id", "CreatedAt", "Description", "DifficultyLevel", "DistanceKm", "ElevationGainM", "EstimatedDurationMinutes", "GpxFileUrl", "ImageUrl", "IsActive", "Name", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8020), "Un traseu ușor în jurul lacului principal.", 0, 2.5m, 20, 45, null, "https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=2000", true, "Traseul Lacului", new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8028) },
-                    { 2, new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8044), "Traseu mediu prin pădure deasă.", 1, 8.0m, 350, 180, null, "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2000", true, "Poteca Urșilor", new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8044) },
-                    { 3, new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8046), "Traseu dificil până în vârful rezervației.", 2, 15.0m, 1200, 420, null, "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2000", true, "Vârful Pietros", new DateTime(2026, 5, 15, 21, 7, 42, 632, DateTimeKind.Utc).AddTicks(8047) }
+                    { 1, new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(8750), "An easy trail around the main lake.", 0, 2.5m, 20, 45, null, "https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=2000", true, "The Lake Trail", new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(8768) },
+                    { 2, new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(8820), "A moderate trail through dense forest.", 1, 8.0m, 350, 180, null, "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2000", true, "Bear's Path", new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(8822) },
+                    { 3, new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(8826), "A challenging trail up to the highest point of the reserve.", 2, 15.0m, 1200, 420, null, "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2000", true, "Pietros Peak", new DateTime(2026, 5, 15, 21, 37, 20, 154, DateTimeKind.Utc).AddTicks(8828) }
                 });
 
             migrationBuilder.InsertData(

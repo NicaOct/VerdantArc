@@ -60,11 +60,11 @@
                     // Set icon based on description
                     let icon = '⛅';
                     const desc = data.weatherDescription.toLowerCase();
-                    if (desc.includes('senin')) icon = '☀️';
-                    else if (desc.includes('ploaie') || desc.includes('burni')) icon = '🌧️';
-                    else if (desc.includes('ninsoare')) icon = '❄️';
-                    else if (desc.includes('furtună')) icon = '⛈️';
-                    else if (desc.includes('ceaț')) icon = '🌫️';
+                    if (desc.includes('clear')) icon = '☀️';
+                    else if (desc.includes('rain') || desc.includes('drizzle')) icon = '🌧️';
+                    else if (desc.includes('snow')) icon = '❄️';
+                    else if (desc.includes('thunder')) icon = '⛈️';
+                    else if (desc.includes('fog')) icon = '🌫️';
                     
                     document.getElementById('weather-icon').innerText = icon;
                     

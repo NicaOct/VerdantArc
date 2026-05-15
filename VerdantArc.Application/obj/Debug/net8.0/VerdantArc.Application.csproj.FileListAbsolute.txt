@@ -13,3 +13,4 @@ D:\faculta\VerdantArc\VerdantArc.Application\obj\Debug\net8.0\VerdantArc.Applica
 D:\faculta\VerdantArc\VerdantArc.Application\obj\Debug\net8.0\refint\VerdantArc.Application.dll
 D:\faculta\VerdantArc\VerdantArc.Application\obj\Debug\net8.0\VerdantArc.Application.pdb
 D:\faculta\VerdantArc\VerdantArc.Application\obj\Debug\net8.0\ref\VerdantArc.Application.dll
+D:\faculta\VerdantArc\VerdantArc.Application\obj\Debug\net8.0\VerdantArc.Application.sourcelink.json

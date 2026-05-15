@@ -87,7 +87,7 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
             Email = "user@verdantarc.ro",
             NormalizedEmail = "USER@VERDANTARC.RO",
             EmailConfirmed = true,
-            FullName = "Vizitator Frecvent",
+            FullName = "Frequent Visitor",
             RegisteredAt = DateTime.UtcNow
         };
         user.PasswordHash = hasher.HashPassword(user, "User123!");
@@ -102,23 +102,23 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
 
         // Trails
         builder.Entity<Trail>().HasData(
-            new Trail { Id = 1, Name = "Traseul Lacului", Description = "Un traseu ușor în jurul lacului principal.", DifficultyLevel = DifficultyLevel.Easy, DistanceKm = 2.5m, EstimatedDurationMinutes = 45, ElevationGainM = 20, ImageUrl = "https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=2000" },
-            new Trail { Id = 2, Name = "Poteca Urșilor", Description = "Traseu mediu prin pădure deasă.", DifficultyLevel = DifficultyLevel.Medium, DistanceKm = 8.0m, EstimatedDurationMinutes = 180, ElevationGainM = 350, ImageUrl = "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2000" },
-            new Trail { Id = 3, Name = "Vârful Pietros", Description = "Traseu dificil până în vârful rezervației.", DifficultyLevel = DifficultyLevel.Hard, DistanceKm = 15.0m, EstimatedDurationMinutes = 420, ElevationGainM = 1200, ImageUrl = "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2000" }
+            new Trail { Id = 1, Name = "Lake Loop Trail", Description = "An easy trail around the main lake, perfect for families and beginners.", DifficultyLevel = DifficultyLevel.Easy, DistanceKm = 2.5m, EstimatedDurationMinutes = 45, ElevationGainM = 20, ImageUrl = "https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=2000" },
+            new Trail { Id = 2, Name = "Bear's Path", Description = "A moderate trail through dense forest with chances of wildlife sightings.", DifficultyLevel = DifficultyLevel.Medium, DistanceKm = 8.0m, EstimatedDurationMinutes = 180, ElevationGainM = 350, ImageUrl = "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2000" },
+            new Trail { Id = 3, Name = "Rocky Peak Summit", Description = "A challenging trail to the highest point of the reserve with panoramic views.", DifficultyLevel = DifficultyLevel.Hard, DistanceKm = 15.0m, EstimatedDurationMinutes = 420, ElevationGainM = 1200, ImageUrl = "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2000" }
         );
 
         // Species
         builder.Entity<Species>().HasData(
-            new Species { Id = 1, CommonName = "Urs Brun", ScientificName = "Ursus arctos", Category = Category.Mammal, ConservationStatus = ConservationStatus.VU, Description = "Cel mai mare mamifer din rezervație." },
-            new Species { Id = 2, CommonName = "Cerb", ScientificName = "Cervus elaphus", Category = Category.Mammal, ConservationStatus = ConservationStatus.LC, Description = "Animal erbivor masiv." },
-            new Species { Id = 3, CommonName = "Acvila de munte", ScientificName = "Aquila chrysaetos", Category = Category.Bird, ConservationStatus = ConservationStatus.LC, Description = "Pasăre de pradă impresionantă." },
-            new Species { Id = 4, CommonName = "Vipera cu corn", ScientificName = "Vipera ammodytes", Category = Category.Reptile, ConservationStatus = ConservationStatus.NT, Description = "Șarpe veninos." },
-            new Species { Id = 5, CommonName = "Floare de colț", ScientificName = "Leontopodium nivale", Category = Category.Plant, ConservationStatus = ConservationStatus.VU, IsEndemic = false, Description = "Floare rară montană." },
-            new Species { Id = 6, CommonName = "Păstrăv de munte", ScientificName = "Salmo trutta fario", Category = Category.Fish, ConservationStatus = ConservationStatus.LC, Description = "Pește din apele repezi." },
-            new Species { Id = 7, CommonName = "Croitorul fagului", ScientificName = "Rosalia alpina", Category = Category.Insect, ConservationStatus = ConservationStatus.VU, Description = "Gândac protejat." },
-            new Species { Id = 8, CommonName = "Lup", ScientificName = "Canis lupus", Category = Category.Mammal, ConservationStatus = ConservationStatus.LC, Description = "Prădător în haită." },
-            new Species { Id = 9, CommonName = "Râs", ScientificName = "Lynx lynx", Category = Category.Mammal, ConservationStatus = ConservationStatus.LC, Description = "Felină sălbatică." },
-            new Species { Id = 10, CommonName = "Ghiocel", ScientificName = "Galanthus nivalis", Category = Category.Plant, ConservationStatus = ConservationStatus.LC, Description = "Floare de primăvară." }
+            new Species { Id = 1, CommonName = "Brown Bear", ScientificName = "Ursus arctos", Category = Category.Mammal, ConservationStatus = ConservationStatus.VU, Description = "The largest mammal in the reserve, a powerful omnivore." },
+            new Species { Id = 2, CommonName = "Red Deer", ScientificName = "Cervus elaphus", Category = Category.Mammal, ConservationStatus = ConservationStatus.LC, Description = "A large herbivorous animal commonly found in forest clearings." },
+            new Species { Id = 3, CommonName = "Golden Eagle", ScientificName = "Aquila chrysaetos", Category = Category.Bird, ConservationStatus = ConservationStatus.LC, Description = "An impressive bird of prey soaring over mountain peaks." },
+            new Species { Id = 4, CommonName = "Horned Viper", ScientificName = "Vipera ammodytes", Category = Category.Reptile, ConservationStatus = ConservationStatus.NT, Description = "A venomous snake found in rocky, sun-exposed areas." },
+            new Species { Id = 5, CommonName = "Edelweiss", ScientificName = "Leontopodium nivale", Category = Category.Plant, ConservationStatus = ConservationStatus.VU, IsEndemic = false, Description = "A rare and iconic alpine flower symbolizing the mountains." },
+            new Species { Id = 6, CommonName = "Brown Trout", ScientificName = "Salmo trutta fario", Category = Category.Fish, ConservationStatus = ConservationStatus.LC, Description = "A freshwater fish thriving in the reserve's fast-flowing streams." },
+            new Species { Id = 7, CommonName = "Rosalia Longicorn", ScientificName = "Rosalia alpina", Category = Category.Insect, ConservationStatus = ConservationStatus.VU, Description = "A striking protected beetle with blue and black markings." },
+            new Species { Id = 8, CommonName = "Grey Wolf", ScientificName = "Canis lupus", Category = Category.Mammal, ConservationStatus = ConservationStatus.LC, Description = "A social pack predator vital to the ecosystem balance." },
+            new Species { Id = 9, CommonName = "Eurasian Lynx", ScientificName = "Lynx lynx", Category = Category.Mammal, ConservationStatus = ConservationStatus.LC, Description = "A solitary wild feline and skilled ambush hunter." },
+            new Species { Id = 10, CommonName = "Snowdrop", ScientificName = "Galanthus nivalis", Category = Category.Plant, ConservationStatus = ConservationStatus.LC, Description = "A delicate spring flower, one of the first to bloom after winter." }
         );
     }
 }

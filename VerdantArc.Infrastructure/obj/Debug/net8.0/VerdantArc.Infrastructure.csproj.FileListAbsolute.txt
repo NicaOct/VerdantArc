@@ -17,3 +17,4 @@ D:\faculta\VerdantArc\VerdantArc.Infrastructure\obj\Debug\net8.0\refint\VerdantA
 D:\faculta\VerdantArc\VerdantArc.Infrastructure\obj\Debug\net8.0\VerdantArc.Infrastructure.pdb
 D:\faculta\VerdantArc\VerdantArc.Infrastructure\obj\Debug\net8.0\VerdantArc.Infrastructure.genruntimeconfig.cache
 D:\faculta\VerdantArc\VerdantArc.Infrastructure\obj\Debug\net8.0\ref\VerdantArc.Infrastructure.dll
+D:\faculta\VerdantArc\VerdantArc.Infrastructure\obj\Debug\net8.0\VerdantArc.Infrastructure.sourcelink.json

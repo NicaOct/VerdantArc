@@ -10,3 +10,4 @@ D:\faculta\VerdantArc\VerdantArc.Domain\obj\Debug\net8.0\VerdantArc.Domain.dll
 D:\faculta\VerdantArc\VerdantArc.Domain\obj\Debug\net8.0\refint\VerdantArc.Domain.dll
 D:\faculta\VerdantArc\VerdantArc.Domain\obj\Debug\net8.0\VerdantArc.Domain.pdb
 D:\faculta\VerdantArc\VerdantArc.Domain\obj\Debug\net8.0\ref\VerdantArc.Domain.dll
+D:\faculta\VerdantArc\VerdantArc.Domain\obj\Debug\net8.0\VerdantArc.Domain.sourcelink.json
