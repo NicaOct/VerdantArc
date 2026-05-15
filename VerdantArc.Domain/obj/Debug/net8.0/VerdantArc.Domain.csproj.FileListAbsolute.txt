@@ -1,0 +1,12 @@
+D:\faculta\VerdantArc\VerdantArc.Domain\bin\Debug\net8.0\VerdantArc.Domain.deps.json
+D:\faculta\VerdantArc\VerdantArc.Domain\bin\Debug\net8.0\VerdantArc.Domain.dll
+D:\faculta\VerdantArc\VerdantArc.Domain\bin\Debug\net8.0\VerdantArc.Domain.pdb
+D:\faculta\VerdantArc\VerdantArc.Domain\obj\Debug\net8.0\VerdantArc.Domain.csproj.AssemblyReference.cache
+D:\faculta\VerdantArc\VerdantArc.Domain\obj\Debug\net8.0\VerdantArc.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\faculta\VerdantArc\VerdantArc.Domain\obj\Debug\net8.0\VerdantArc.Domain.AssemblyInfoInputs.cache
+D:\faculta\VerdantArc\VerdantArc.Domain\obj\Debug\net8.0\VerdantArc.Domain.AssemblyInfo.cs
+D:\faculta\VerdantArc\VerdantArc.Domain\obj\Debug\net8.0\VerdantArc.Domain.csproj.CoreCompileInputs.cache
+D:\faculta\VerdantArc\VerdantArc.Domain\obj\Debug\net8.0\VerdantArc.Domain.dll
+D:\faculta\VerdantArc\VerdantArc.Domain\obj\Debug\net8.0\refint\VerdantArc.Domain.dll
+D:\faculta\VerdantArc\VerdantArc.Domain\obj\Debug\net8.0\VerdantArc.Domain.pdb
+D:\faculta\VerdantArc\VerdantArc.Domain\obj\Debug\net8.0\ref\VerdantArc.Domain.dll

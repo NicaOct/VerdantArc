@@ -1,0 +1,15 @@
+D:\faculta\VerdantArc\VerdantArc.Application\bin\Debug\net8.0\VerdantArc.Application.deps.json
+D:\faculta\VerdantArc\VerdantArc.Application\bin\Debug\net8.0\VerdantArc.Application.dll
+D:\faculta\VerdantArc\VerdantArc.Application\bin\Debug\net8.0\VerdantArc.Application.pdb
+D:\faculta\VerdantArc\VerdantArc.Application\bin\Debug\net8.0\VerdantArc.Domain.dll
+D:\faculta\VerdantArc\VerdantArc.Application\bin\Debug\net8.0\VerdantArc.Domain.pdb
+D:\faculta\VerdantArc\VerdantArc.Application\obj\Debug\net8.0\VerdantArc.Application.csproj.AssemblyReference.cache
+D:\faculta\VerdantArc\VerdantArc.Application\obj\Debug\net8.0\VerdantArc.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\faculta\VerdantArc\VerdantArc.Application\obj\Debug\net8.0\VerdantArc.Application.AssemblyInfoInputs.cache
+D:\faculta\VerdantArc\VerdantArc.Application\obj\Debug\net8.0\VerdantArc.Application.AssemblyInfo.cs
+D:\faculta\VerdantArc\VerdantArc.Application\obj\Debug\net8.0\VerdantArc.Application.csproj.CoreCompileInputs.cache
+D:\faculta\VerdantArc\VerdantArc.Application\obj\Debug\net8.0\VerdantA.D2D33DA5.Up2Date
+D:\faculta\VerdantArc\VerdantArc.Application\obj\Debug\net8.0\VerdantArc.Application.dll
+D:\faculta\VerdantArc\VerdantArc.Application\obj\Debug\net8.0\refint\VerdantArc.Application.dll
+D:\faculta\VerdantArc\VerdantArc.Application\obj\Debug\net8.0\VerdantArc.Application.pdb
+D:\faculta\VerdantArc\VerdantArc.Application\obj\Debug\net8.0\ref\VerdantArc.Application.dll

@@ -1,0 +1,75 @@
+@model VerdantArc.Application.DTOs.TrailResponseDto
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="container">
+    <div style="margin-bottom: 2rem;">
+        <a href="/Trails" style="color: var(--text-light); text-decoration: none;">&larr; Back to Trails</a>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+        <div>
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="@Model.ImageUrl" alt="@Model.Name" style="width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-md); margin-bottom: 2rem;" />
+            }
+            <div class="card glass">
+                <div class="card-body">
+                    <h2 style="margin-bottom: 1rem;">Trail Statistics</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;">
+                            <span style="font-weight: 500;">Difficulty</span>
+                            <span class="badge badge-@(Model.DifficultyLevel.ToLower())">@Model.DifficultyLevel</span>
+                        </li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;">
+                            <span style="font-weight: 500;">Distance</span>
+                            <span>@Model.DistanceKm km</span>
+                        </li>
+                        <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;">
+                            <span style="font-weight: 500;">Duration</span>
+                            <span>@(Model.EstimatedDurationMinutes / 60)h @(Model.EstimatedDurationMinutes % 60)m</span>
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; justify-content: space-between;">
+                            <span style="font-weight: 500;">Elevation Gain</span>
+                            <span>@Model.ElevationGainM m</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h1 style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;">@Model.Name</h1>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">@Model.Description</p>
+
+            @if (!string.IsNullOrEmpty(Model.GpxFileUrl))
+            {
+                <a href="@Model.GpxFileUrl" class="btn btn-primary" style="margin-bottom: 2rem;">📥 Download GPX</a>
+            }
+
+            <h3 style="margin-bottom: 1rem;">Interactive Map</h3>
+            <div id="map" style="height: 400px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); z-index: 1;"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initialize map
+            var map = L.map('map').setView([45.5, 25.0], 13);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+            // Placeholder for GPX track or simple marker
+            L.marker([45.5, 25.0]).addTo(map)
+                .bindPopup('@Model.Name')
+                .openPopup();
+        });
+    </script>
+}

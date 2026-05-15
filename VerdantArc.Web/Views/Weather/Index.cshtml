@@ -1,0 +1,82 @@
+@{
+    ViewData["Title"] = "Live Weather";
+}
+
+<div style="background: linear-gradient(rgba(248, 250, 249, 0.7), rgba(248, 250, 249, 0.9)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600') no-repeat center center/cover; min-height: 100vh; margin-top: -1.5rem; padding-top: 1.5rem;">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 3rem; padding-top: 2rem;">
+        <h1 style="font-size: 3rem; color: var(--primary-color);">Live Weather Conditions</h1>
+        <p style="font-size: 1.2rem; color: var(--text-light);">Check current conditions and forecast before heading out to VerdantArc.</p>
+    </div>
+
+    <div id="weather-container" style="max-width: 600px; margin: 0 auto; display: none;">
+        <div class="card glass" style="text-align: center; padding: 3rem 2rem;">
+            <div id="weather-icon" style="font-size: 5rem; margin-bottom: 1rem;">⛅</div>
+            <h2 id="weather-temp" style="font-size: 4rem; font-weight: 800; margin-bottom: 0;">--°C</h2>
+            <p id="weather-desc" style="font-size: 1.5rem; font-weight: 500; margin-bottom: 2rem;">Loading...</p>
+
+            <div style="display: flex; justify-content: space-around; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+                <div>
+                    <p style="color: var(--text-light); margin-bottom: 0.5rem;">Wind Speed</p>
+                    <p id="weather-wind" style="font-weight: 600; font-size: 1.2rem;">-- km/h</p>
+                </div>
+                <div>
+                    <p style="color: var(--text-light); margin-bottom: 0.5rem;">Humidity</p>
+                    <p id="weather-humidity" style="font-weight: 600; font-size: 1.2rem;">-- %</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 2rem; font-size: 0.85rem; color: var(--text-light);">
+                Last updated: <span id="weather-time">--</span>
+            </p>
+        </div>
+    </div>
+    
+    <div id="weather-loading" style="text-align: center; padding: 4rem;">
+        <div class="loader" style="margin: 0 auto; border: 4px solid var(--border-color); border-top: 4px solid var(--primary-color); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite;"></div>
+        <p style="margin-top: 1rem;">Fetching latest data...</p>
+    </div>
+    </div>
+</div>
+
+<style>
+    @@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+</style>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+            try {
+                const response = await fetch('/api/v1/weather/current');
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    document.getElementById('weather-temp').innerText = `${data.temperatureCelsius}°C`;
+                    document.getElementById('weather-desc').innerText = data.weatherDescription;
+                    document.getElementById('weather-wind').innerText = `${data.windSpeedKmh} km/h`;
+                    document.getElementById('weather-humidity').innerText = `${data.humidityPercent}%`;
+                    document.getElementById('weather-time').innerText = new Date(data.fetchedAt).toLocaleString();
+                    
+                    // Set icon based on description
+                    let icon = '⛅';
+                    const desc = data.weatherDescription.toLowerCase();
+                    if (desc.includes('senin')) icon = '☀️';
+                    else if (desc.includes('ploaie') || desc.includes('burni')) icon = '🌧️';
+                    else if (desc.includes('ninsoare')) icon = '❄️';
+                    else if (desc.includes('furtună')) icon = '⛈️';
+                    else if (desc.includes('ceaț')) icon = '🌫️';
+                    
+                    document.getElementById('weather-icon').innerText = icon;
+                    
+                    document.getElementById('weather-loading').style.display = 'none';
+                    document.getElementById('weather-container').style.display = 'block';
+                } else {
+                    document.getElementById('weather-loading').innerHTML = '<p style="color: var(--danger-color);">Error loading weather data.</p>';
+                }
+            } catch (error) {
+                console.error("Error fetching weather:", error);
+                document.getElementById('weather-loading').innerHTML = '<p style="color: var(--danger-color);">Error loading weather data.</p>';
+            }
+        });
+    </script>
+}

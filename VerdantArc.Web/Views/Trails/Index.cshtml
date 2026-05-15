@@ -1,0 +1,43 @@
+@model IEnumerable<VerdantArc.Application.DTOs.TrailResponseDto>
+@{
+    ViewData["Title"] = "Trails";
+}
+
+<div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <h1 style="font-size: 2.5rem; color: var(--primary-color);">Explore Trails</h1>
+        <div>
+            <select class="form-control" style="width: auto; display: inline-block;">
+                <option value="">All Difficulties</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="grid">
+        @foreach (var trail in Model)
+        {
+            <div class="card">
+                @if (!string.IsNullOrEmpty(trail.ImageUrl))
+                {
+                    <img src="@trail.ImageUrl" alt="@trail.Name" class="card-img" />
+                }
+                <div class="card-body">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <h3 class="card-title" style="margin: 0;">@trail.Name</h3>
+                        <span class="badge badge-@(trail.DifficultyLevel.ToLower())">@trail.DifficultyLevel</span>
+                    </div>
+                    <p style="color: var(--text-light); margin-bottom: 1rem; flex: 1;">@trail.Description</p>
+                    <div style="display: flex; gap: 1rem; font-size: 0.9rem; font-weight: 500; margin-bottom: 1.5rem;">
+                        <span>📏 @trail.DistanceKm km</span>
+                        <span>⏱️ @(trail.EstimatedDurationMinutes / 60)h @(trail.EstimatedDurationMinutes % 60)m</span>
+                        <span>⛰️ @trail.ElevationGainM m</span>
+                    </div>
+                    <a href="/Trails/Details/@trail.Id" class="btn btn-outline" style="width: 100%;">View Details</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

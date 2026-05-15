@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - VerdantArc</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    
+    <!-- Leaflet CSS for Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    <header>
+        <nav class="navbar glass" style="border-bottom: 1px solid var(--border-color);">
+            <a class="navbar-brand" href="/">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 22h20L12 2z"/>
+                    <path d="M12 12v6"/>
+                </svg>
+                VerdantArc
+            </a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/Trails">Trails</a></li>
+                <li><a href="/Species">Species</a></li>
+                <li><a href="/Weather">Weather</a></li>
+                <li><a href="/Home/About">About</a></li>
+                
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li><a href="/Admin/Dashboard">Admin</a></li>
+                    }
+                    <li><a href="/Account/Profile">Profile</a></li>
+                    <li>
+                        <form method="post" action="/Account/Logout" style="display:inline;">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-primary" style="padding: 0.4rem 1rem;">Logout</button>
+                        </form>
+                    </li>
+                }
+                else
+                {
+                    <li><a href="/Account/Login">Login</a></li>
+                    <li><a href="/Account/Register" class="btn btn-primary">Register</a></li>
+                }
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer>
+        <div class="container">
+            &copy; @DateTime.Now.Year - VerdantArc Nature Reserve - All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Alpine.js for lightweight reactivity if needed -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

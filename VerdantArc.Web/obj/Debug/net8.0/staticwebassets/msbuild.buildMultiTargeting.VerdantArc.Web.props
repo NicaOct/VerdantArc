@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\VerdantArc.Web.props" />
+</Project>

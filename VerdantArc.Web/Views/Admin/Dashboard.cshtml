@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <h1 style="font-size: 2.5rem; color: var(--primary-color);">Admin Dashboard</h1>
+    </div>
+
+    <div class="grid">
+        <div class="card glass text-center" style="padding: 2rem;">
+            <h2 style="font-size: 3rem; color: var(--primary-color);">3</h2>
+            <p style="font-weight: 600; font-size: 1.25rem;">Trails</p>
+            <a href="/Admin/Trails" class="btn btn-outline" style="margin-top: 1rem;">Manage Trails</a>
+        </div>
+        <div class="card glass text-center" style="padding: 2rem;">
+            <h2 style="font-size: 3rem; color: var(--primary-color);">10</h2>
+            <p style="font-weight: 600; font-size: 1.25rem;">Species</p>
+            <a href="/Admin/Species" class="btn btn-outline" style="margin-top: 1rem;">Manage Species</a>
+        </div>
+        <div class="card glass text-center" style="padding: 2rem;">
+            <h2 style="font-size: 3rem; color: var(--primary-color);">2</h2>
+            <p style="font-weight: 600; font-size: 1.25rem;">Users</p>
+            <button class="btn btn-outline" style="margin-top: 1rem;" disabled>Manage Users (Soon)</button>
+        </div>
+    </div>
+</div>
