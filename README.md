@@ -1,4 +1,4 @@
-# VerdantArc 🌿
+# VerdantArc 
 
 A full-stack web application for exploring and managing a fictional nature reserve. Built with ASP.NET Core 8 MVC, VerdantArc allows visitors to discover hiking trails, browse documented wildlife and plant species, and check live weather conditions — while administrators can manage all content through a protected dashboard.
 
