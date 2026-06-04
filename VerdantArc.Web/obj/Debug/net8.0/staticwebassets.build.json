@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "l+8stF/hEv0E5+uLJq1pTRmre8vClwkK4+sbYia5bFk=",
+  "Hash": "6TQxnbamv5aXfbjF5CaXva4AmKoGLZCCMgZuogjftUQ=",
   "Source": "VerdantArc.Web",
   "BasePath": "_content/VerdantArc.Web",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "cjre6zo2sq",
-      "Integrity": "GEs9pptHl87oFQehPfBXhuYrx9zkGhBGZAQmVp9v9Kw=",
+      "Fingerprint": "jqxv1eke9l",
+      "Integrity": "ixWHNFJWSCwP6WOcvk/QQ+FzhaxiZeJ5qi4ZxPmRGeM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1384,51 +1384,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.cjre6zo2sq.css",
-      "AssetFile": "D:\\faculta\\VerdantArc\\VerdantArc.Web\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6373"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"GEs9pptHl87oFQehPfBXhuYrx9zkGhBGZAQmVp9v9Kw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 15 May 2026 21:12:48 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "cjre6zo2sq"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-GEs9pptHl87oFQehPfBXhuYrx9zkGhBGZAQmVp9v9Kw="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "D:\\faculta\\VerdantArc\\VerdantArc.Web\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1439,7 +1394,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6373"
+          "Value": "11316"
         },
         {
           "Name": "Content-Type",
@@ -1447,11 +1402,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"GEs9pptHl87oFQehPfBXhuYrx9zkGhBGZAQmVp9v9Kw=\""
+          "Value": "\"ixWHNFJWSCwP6WOcvk/QQ+FzhaxiZeJ5qi4ZxPmRGeM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 15 May 2026 21:12:48 GMT"
+          "Value": "Wed, 03 Jun 2026 19:32:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1461,7 +1416,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-GEs9pptHl87oFQehPfBXhuYrx9zkGhBGZAQmVp9v9Kw="
+          "Value": "sha256-ixWHNFJWSCwP6WOcvk/QQ+FzhaxiZeJ5qi4ZxPmRGeM="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.jqxv1eke9l.css",
+      "AssetFile": "D:\\faculta\\VerdantArc\\VerdantArc.Web\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11316"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ixWHNFJWSCwP6WOcvk/QQ+FzhaxiZeJ5qi4ZxPmRGeM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 03 Jun 2026 19:32:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jqxv1eke9l"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ixWHNFJWSCwP6WOcvk/QQ+FzhaxiZeJ5qi4ZxPmRGeM="
         }
       ]
     },

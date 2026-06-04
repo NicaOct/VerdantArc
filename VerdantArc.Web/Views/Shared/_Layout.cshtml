@@ -74,5 +74,234 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     
     @await RenderSectionAsync("Scripts", required: false)
+
+    @if (User.Identity?.IsAuthenticated == true)
+    {
+        <div class="chatbot-wrapper animate-fade-in">
+            <button class="chatbot-toggle" id="chatbotToggle" title="Find your trail">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+            </button>
+
+            <div class="chatbot-window" id="chatbotWindow">
+                <div class="chatbot-header">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transform: rotate(90deg);">
+                            <path d="M12 2L2 22h20L12 2z"/>
+                        </svg>
+                        Trail Assistant
+                    </h3>
+                    <button class="chatbot-close" id="chatbotClose">&times;</button>
+                </div>
+                
+                <div class="chatbot-messages" id="chatbotMessages">
+                    <!-- Messages dynamic injection -->
+                </div>
+                
+                <div class="chatbot-options" id="chatbotOptions">
+                    <!-- Option buttons dynamic injection -->
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const toggleBtn = document.getElementById("chatbotToggle");
+                const closeBtn = document.getElementById("chatbotClose");
+                const chatWindow = document.getElementById("chatbotWindow");
+                const messagesContainer = document.getElementById("chatbotMessages");
+                const optionsContainer = document.getElementById("chatbotOptions");
+
+                let currentStep = 0;
+                const state = {
+                    difficulty: null,
+                    distance: null,
+                    duration: null,
+                    elevation: null,
+                    gpx: null
+                };
+
+                const questions = [
+                    {
+                        field: 'difficulty',
+                        text: 'Hi there! Let me help you discover the perfect trail. First, what is your preferred difficulty level?',
+                        options: [
+                            { label: 'Easy', value: 'Easy' },
+                            { label: 'Medium', value: 'Medium' },
+                            { label: 'Hard', value: 'Hard' },
+                            { label: 'Any', value: 'any' }
+                        ]
+                    },
+                    {
+                        field: 'distance',
+                        text: 'Great! Next, what length or distance do you prefer for your hike?',
+                        options: [
+                            { label: 'Short (< 5 km)', value: 'short' },
+                            { label: 'Medium (5 - 10 km)', value: 'medium' },
+                            { label: 'Long (> 10 km)', value: 'long' },
+                            { label: 'Any Distance', value: 'any' }
+                        ]
+                    },
+                    {
+                        field: 'duration',
+                        text: 'How much time are you planning to spend hiking?',
+                        options: [
+                            { label: 'Quick (< 2 hours)', value: 'quick' },
+                            { label: 'Moderate (2 - 5 hours)', value: 'moderate' },
+                            { label: 'Long (> 5 hours)', value: 'long' },
+                            { label: 'Any Duration', value: 'any' }
+                        ]
+                    },
+                    {
+                        field: 'elevation',
+                        text: 'What type of trail terrain or elevation gain is ideal for you?',
+                        options: [
+                            { label: 'Flat (< 150m)', value: 'flat' },
+                            { label: 'Moderate (150m - 600m)', value: 'moderate' },
+                            { label: 'Steep (> 600m)', value: 'steep' },
+                            { label: 'Any Elevation', value: 'any' }
+                        ]
+                    },
+                    {
+                        field: 'gpx',
+                        text: 'Lastly, do you need an interactive GPX route map for offline navigation?',
+                        options: [
+                            { label: 'Yes, Required', value: 'yes' },
+                            { label: 'No, Not Needed', value: 'no' },
+                            { label: 'Any / No Preference', value: 'any' }
+                        ]
+                    }
+                ];
+
+                // Toggle chatbox visibility
+                toggleBtn.addEventListener("click", () => {
+                    chatWindow.classList.toggle("active");
+                    if (chatWindow.classList.contains("active") && messagesContainer.children.length === 0) {
+                        startChat();
+                    }
+                });
+
+                closeBtn.addEventListener("click", () => {
+                    chatWindow.classList.remove("active");
+                });
+
+                function startChat() {
+                    messagesContainer.innerHTML = "";
+                    optionsContainer.innerHTML = "";
+                    currentStep = 0;
+                    for (let key in state) {
+                        state[key] = null;
+                    }
+                    askQuestion();
+                }
+
+                function askQuestion() {
+                    if (currentStep < questions.length) {
+                        const q = questions[currentStep];
+                        addMessage(q.text, "bot");
+                        renderOptions(q.options, (val, label) => {
+                            // User clicked option
+                            addMessage(label, "user");
+                            state[q.field] = val;
+                            currentStep++;
+                            
+                            // Wait briefly before next action for realism
+                            optionsContainer.innerHTML = `<span style="font-size:0.8rem;color:var(--text-light)">Thinking...</span>`;
+                            setTimeout(() => {
+                                askQuestion();
+                            }, 500);
+                        });
+                    } else {
+                        fetchResults();
+                    }
+                }
+
+                function addMessage(text, sender) {
+                    const bubble = document.createElement("div");
+                    bubble.className = `chatbot-bubble ${sender}`;
+                    bubble.innerText = text;
+                    messagesContainer.appendChild(bubble);
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                }
+
+                function renderOptions(options, callback) {
+                    optionsContainer.innerHTML = "";
+                    options.forEach(opt => {
+                        const btn = document.createElement("button");
+                        btn.className = "chatbot-btn";
+                        btn.innerText = opt.label;
+                        btn.addEventListener("click", () => callback(opt.value, opt.label));
+                        optionsContainer.appendChild(btn);
+                    });
+                }
+
+                async function fetchResults() {
+                    addMessage("Searching our database for matching trails...", "bot");
+                    optionsContainer.innerHTML = "";
+
+                    const queryParams = new URLSearchParams({
+                        difficulty: state.difficulty,
+                        distance: state.distance,
+                        duration: state.duration,
+                        elevation: state.elevation,
+                        gpx: state.gpx
+                    });
+
+                    try {
+                        const response = await fetch(`/api/v1/trails/chatbot-filter?${queryParams.toString()}`);
+                        if (!response.ok) throw new Error("API Error");
+                        
+                        const trails = await response.json();
+                        
+                        if (trails && trails.length > 0) {
+                            addMessage(`I found ${trails.length} trail${trails.length > 1 ? 's' : ''} matching your preferences:`, "bot");
+                            
+                            const listDiv = document.createElement("div");
+                            listDiv.className = "chatbot-trail-list";
+                            
+                            trails.forEach(t => {
+                                const item = document.createElement("a");
+                                item.href = `/Trails/Details/${t.id}`;
+                                item.className = "chatbot-trail-item";
+                                
+                                const formatDuration = (mins) => {
+                                    const hrs = Math.floor(mins / 60);
+                                    const remMins = mins % 60;
+                                    return hrs > 0 ? `${hrs}h ${remMins}m` : `${remMins}m`;
+                                };
+                                
+                                item.innerHTML = `
+                                    <div class="chatbot-trail-name">${t.name}</div>
+                                    <div class="chatbot-trail-desc">${t.description}</div>
+                                    <div class="chatbot-trail-meta">
+                                        <span>🏃 ${t.distanceKm} km</span>
+                                        <span>⏱️ ${formatDuration(t.estimatedDurationMinutes)}</span>
+                                        <span>⛰️ ${t.elevationGainM}m</span>
+                                    </div>
+                                `;
+                                listDiv.appendChild(item);
+                            });
+                            
+                            messagesContainer.appendChild(listDiv);
+                            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                        } else {
+                            addMessage("No trails match all your criteria. Try adjusting your preferences!", "bot");
+                        }
+                    } catch (error) {
+                        addMessage("Oops! There was an issue reaching the trail database. Let's try again.", "bot");
+                    }
+
+                    // Show restart option
+                    const restartBtn = document.createElement("button");
+                    restartBtn.className = "chatbot-btn primary";
+                    restartBtn.innerText = "Restart Survey";
+                    restartBtn.style.marginTop = "0.5rem";
+                    restartBtn.addEventListener("click", startChat);
+                    optionsContainer.appendChild(restartBtn);
+                }
+            });
+        </script>
+    }
 </body>
 </html>

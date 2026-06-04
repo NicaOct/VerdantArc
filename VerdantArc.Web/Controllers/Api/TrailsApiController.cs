@@ -38,4 +38,16 @@ public class TrailsApiController : ControllerBase
         // Placeholder for adding a report
         return Created($"/api/v1/trails/{id}/report", new { message = "Report added successfully" });
     }
+
+    [HttpGet("chatbot-filter")]
+    public async Task<ActionResult<IEnumerable<TrailResponseDto>>> ChatbotFilter(
+        [FromQuery] string? difficulty,
+        [FromQuery] string? distance,
+        [FromQuery] string? duration,
+        [FromQuery] string? elevation,
+        [FromQuery] string? gpx)
+    {
+        var trails = await _trailService.FilterTrailsAsync(difficulty, distance, duration, elevation, gpx);
+        return Ok(trails);
+    }
 }

@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/VerdantArc.Web/css/site.cjre6zo2sq.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"cjre6zo2sq"},{"Name":"integrity","Value":"sha256-GEs9pptHl87oFQehPfBXhuYrx9zkGhBGZAQmVp9v9Kw="},{"Name":"label","Value":"_content/VerdantArc.Web/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6373"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022GEs9pptHl87oFQehPfBXhuYrx9zkGhBGZAQmVp9v9Kw=\u0022"},{"Name":"Last-Modified","Value":"Fri, 15 May 2026 21:12:48 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/VerdantArc.Web/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-GEs9pptHl87oFQehPfBXhuYrx9zkGhBGZAQmVp9v9Kw="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6373"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022GEs9pptHl87oFQehPfBXhuYrx9zkGhBGZAQmVp9v9Kw=\u0022"},{"Name":"Last-Modified","Value":"Fri, 15 May 2026 21:12:48 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ixWHNFJWSCwP6WOcvk/QQ\u002BFzhaxiZeJ5qi4ZxPmRGeM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"11316"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ixWHNFJWSCwP6WOcvk/QQ\u002BFzhaxiZeJ5qi4ZxPmRGeM=\u0022"},{"Name":"Last-Modified","Value":"Wed, 03 Jun 2026 19:32:07 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/VerdantArc.Web/css/site.jqxv1eke9l.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"jqxv1eke9l"},{"Name":"integrity","Value":"sha256-ixWHNFJWSCwP6WOcvk/QQ\u002BFzhaxiZeJ5qi4ZxPmRGeM="},{"Name":"label","Value":"_content/VerdantArc.Web/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"11316"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ixWHNFJWSCwP6WOcvk/QQ\u002BFzhaxiZeJ5qi4ZxPmRGeM=\u0022"},{"Name":"Last-Modified","Value":"Wed, 03 Jun 2026 19:32:07 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/VerdantArc.Web/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>

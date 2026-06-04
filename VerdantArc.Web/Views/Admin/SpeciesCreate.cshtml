@@ -1,0 +1,75 @@
+@model VerdantArc.Application.DTOs.SpeciesCreateDto
+@{
+    ViewData["Title"] = "Add New Species";
+}
+
+<div class="container" style="padding-top: 3rem; padding-bottom: 3rem; max-width: 800px;">
+    <a href="/Admin/Species" style="font-size: 0.9rem; text-decoration: none; color: var(--secondary-color); font-weight: 600;">&larr; Back to Manage Species</a>
+    <h1 style="font-size: 2.5rem; color: var(--primary-color); margin-top: 0.5rem; margin-bottom: 2rem;">Add New Species</h1>
+
+    <div class="card glass" style="padding: 2.5rem; border-radius: var(--radius-lg);">
+        <form method="post" action="/Admin/Species/Create">
+            @Html.AntiForgeryToken()
+            
+            <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                <div>
+                    <label for="CommonName" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Common Name</label>
+                    <input type="text" id="CommonName" name="CommonName" class="form-control" required placeholder="Brown Bear" value="@Model?.CommonName" />
+                </div>
+                <div>
+                    <label for="ScientificName" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Scientific Name</label>
+                    <input type="text" id="ScientificName" name="ScientificName" class="form-control" required placeholder="Ursus arctos" value="@Model?.ScientificName" />
+                </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <label for="Description" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Description</label>
+                <textarea id="Description" name="Description" class="form-control" rows="4" required placeholder="Describe the species habitat, diet, spotting likelihood..." style="resize: vertical;">@Model?.Description</textarea>
+            </div>
+
+            <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                <div>
+                    <label for="Category" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Category</label>
+                    <select id="Category" name="Category" class="form-control" style="height: auto; padding: 0.9rem 1.25rem;">
+                        @foreach (var val in Enum.GetValues<VerdantArc.Domain.Enums.Category>())
+                        {
+                            <option value="@val">@val</option>
+                        }
+                    </select>
+                </div>
+                <div>
+                    <label for="ConservationStatus" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Conservation Status</label>
+                    <select id="ConservationStatus" name="ConservationStatus" class="form-control" style="height: auto; padding: 0.9rem 1.25rem;">
+                        @foreach (var val in Enum.GetValues<VerdantArc.Domain.Enums.ConservationStatus>())
+                        {
+                            <option value="@val">@val</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                <div>
+                    <label for="InatNaturalistId" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">iNaturalist Taxon ID (Optional)</label>
+                    <input type="text" id="InatNaturalistId" name="InatNaturalistId" class="form-control" placeholder="e.g. 41566" value="@Model?.InatNaturalistId" />
+                </div>
+                <div style="display: flex; align-items: center; padding-top: 2rem;">
+                    <label style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; cursor: pointer;">
+                        <input type="checkbox" id="IsEndemic" name="IsEndemic" value="true" style="width: 1.25rem; height: 1.25rem; accent-color: var(--primary-color);" />
+                        Is Endemic to this Reserve?
+                    </label>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <label for="ImageUrl" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Image URL (Optional)</label>
+                <input type="url" id="ImageUrl" name="ImageUrl" class="form-control" placeholder="https://images.unsplash.com/..." value="@Model?.ImageUrl" />
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: flex-end; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+                <a href="/Admin/Species" class="btn btn-outline">Cancel</a>
+                <button type="submit" class="btn btn-primary">Create Species</button>
+            </div>
+        </form>
+    </div>
+</div>

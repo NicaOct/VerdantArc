@@ -1,0 +1,57 @@
+@model IEnumerable<VerdantArc.Application.DTOs.TrailResponseDto>
+@{
+    ViewData["Title"] = "Manage Trails";
+}
+
+<div class="container" style="padding-top: 3rem; padding-bottom: 3rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <div>
+            <a href="/Admin/Dashboard" style="font-size: 0.9rem; text-decoration: none; color: var(--secondary-color); font-weight: 600;">&larr; Back to Dashboard</a>
+            <h1 style="font-size: 2.5rem; color: var(--primary-color); margin-top: 0.5rem;">Manage Trails</h1>
+        </div>
+        <a href="/Admin/Trails/Create" class="btn btn-primary">Add New Trail</a>
+    </div>
+
+    <div class="card glass" style="padding: 1.5rem; border-radius: var(--radius-lg); overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+            <thead>
+                <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-light); font-weight: 600;">
+                    <th style="padding: 1rem 0.5rem;">Trail Name</th>
+                    <th style="padding: 1rem 0.5rem;">Difficulty</th>
+                    <th style="padding: 1rem 0.5rem;">Distance</th>
+                    <th style="padding: 1rem 0.5rem;">Duration</th>
+                    <th style="padding: 1rem 0.5rem;">Elevation</th>
+                    <th style="padding: 1rem 0.5rem; text-align: right;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var t in Model)
+                {
+                    <tr style="border-bottom: 1px solid var(--border-color); transition: var(--transition);">
+                        <td style="padding: 1rem 0.5rem; font-weight: 600; color: var(--primary-color);">@t.Name</td>
+                        <td style="padding: 1rem 0.5rem;">
+                            <span style="padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
+                                @(t.DifficultyLevel == "Easy" ? "background:#E8F5E9;color:#2E7D32;" : 
+                                  t.DifficultyLevel == "Medium" ? "background:#FFF3E0;color:#EF6C00;" : 
+                                  "background:#FFEBEE;color:#C62828;")">
+                                @t.DifficultyLevel
+                            </span>
+                        </td>
+                        <td style="padding: 1rem 0.5rem;">@t.DistanceKm km</td>
+                        <td style="padding: 1rem 0.5rem;">@(t.EstimatedDurationMinutes) mins</td>
+                        <td style="padding: 1rem 0.5rem;">@t.ElevationGainM m</td>
+                        <td style="padding: 1rem 0.5rem; text-align: right;">
+                            <div style="display: inline-flex; gap: 0.5rem; justify-content: flex-end;">
+                                <a href="/Admin/Trails/Edit/@t.Id" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Edit</a>
+                                <form method="post" action="/Admin/Trails/Delete/@t.Id" onsubmit="return confirm('Are you sure you want to delete this trail?');" style="display:inline;">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; background-color: var(--danger-color); color: white; border: none; border-radius: var(--radius-sm); cursor: pointer;">Delete</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

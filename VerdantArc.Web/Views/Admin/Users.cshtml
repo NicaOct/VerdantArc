@@ -1,0 +1,73 @@
+@model IEnumerable<VerdantArc.Web.Models.UserAdminViewModel>
+@{
+    ViewData["Title"] = "Manage Users";
+}
+
+<div class="container" style="padding-top: 3rem; padding-bottom: 3rem;">
+    <div>
+        <a href="/Admin/Dashboard" style="font-size: 0.9rem; text-decoration: none; color: var(--secondary-color); font-weight: 600;">&larr; Back to Dashboard</a>
+        <h1 style="font-size: 2.5rem; color: var(--primary-color); margin-top: 0.5rem; margin-bottom: 2rem;">Manage Users</h1>
+    </div>
+
+    @if (TempData["Error"] != null)
+    {
+        <div style="background-color: #FFEBEE; color: #C62828; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid #FFCDD2; margin-bottom: 1.5rem; font-weight: 500;">
+            ⚠️ @TempData["Error"]
+        </div>
+    }
+
+    <div class="card glass" style="padding: 1.5rem; border-radius: var(--radius-lg); overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+            <thead>
+                <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-light); font-weight: 600;">
+                    <th style="padding: 1rem 0.5rem;">Full Name</th>
+                    <th style="padding: 1rem 0.5rem;">Email Address</th>
+                    <th style="padding: 1rem 0.5rem;">Registered On</th>
+                    <th style="padding: 1rem 0.5rem;">Assigned Roles</th>
+                    <th style="padding: 1rem 0.5rem; text-align: right;">Administrative Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var u in Model)
+                {
+                    <tr style="border-bottom: 1px solid var(--border-color); transition: var(--transition);">
+                        <td style="padding: 1rem 0.5rem; font-weight: 600;">@u.FullName</td>
+                        <td style="padding: 1rem 0.5rem;">@u.Email</td>
+                        <td style="padding: 1rem 0.5rem; font-size: 0.9rem;">@u.RegisteredAt.ToLocalTime().ToString("g")</td>
+                        <td style="padding: 1rem 0.5rem;">
+                            @foreach (var role in u.Roles)
+                            {
+                                <span style="padding: 0.25rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 700; margin-right: 0.25rem;
+                                    @(role == "Admin" ? "background:#E1BEE7;color:#4A148C;" : "background:#CFD8DC;color:#37474F;")">
+                                    @role
+                                </span>
+                            }
+                        </td>
+                        <td style="padding: 1rem 0.5rem; text-align: right;">
+                            <div style="display: inline-flex; gap: 0.5rem; justify-content: flex-end;">
+                                @if (u.Email != "admin@verdantarc.ro")
+                                {
+                                    <form method="post" action="/Admin/Users/ToggleAdmin/@u.Id" style="display:inline;">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+                                            @(u.Roles.Contains("Admin") ? "Demote from Admin" : "Promote to Admin")
+                                        </button>
+                                    </form>
+
+                                    <form method="post" action="/Admin/Users/Delete/@u.Id" onsubmit="return confirm('Are you sure you want to delete this user account permanently?');" style="display:inline;">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; background-color: var(--danger-color); color: white; border: none; border-radius: var(--radius-sm); cursor: pointer;">Delete Account</button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <span style="font-size: 0.8rem; font-style: italic; color: var(--text-light); padding-right: 0.5rem;">System Account (Protected)</span>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -9,4 +9,5 @@ public interface ITrailService
     Task<TrailResponseDto> CreateAsync(TrailCreateDto dto);
     Task UpdateAsync(int id, TrailUpdateDto dto);
     Task DeleteAsync(int id);
+    Task<IEnumerable<TrailResponseDto>> FilterTrailsAsync(string? difficulty, string? distance, string? duration, string? elevation, string? gpx);
 }

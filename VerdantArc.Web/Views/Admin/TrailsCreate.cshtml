@@ -1,0 +1,62 @@
+@model VerdantArc.Application.DTOs.TrailCreateDto
+@{
+    ViewData["Title"] = "Add New Trail";
+}
+
+<div class="container" style="padding-top: 3rem; padding-bottom: 3rem; max-width: 800px;">
+    <a href="/Admin/Trails" style="font-size: 0.9rem; text-decoration: none; color: var(--secondary-color); font-weight: 600;">&larr; Back to Manage Trails</a>
+    <h1 style="font-size: 2.5rem; color: var(--primary-color); margin-top: 0.5rem; margin-bottom: 2rem;">Add New Trail</h1>
+
+    <div class="card glass" style="padding: 2.5rem; border-radius: var(--radius-lg);">
+        <form method="post" action="/Admin/Trails/Create">
+            @Html.AntiForgeryToken()
+            
+            <div style="margin-bottom: 1.5rem;">
+                <label for="Name" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Trail Name</label>
+                <input type="text" id="Name" name="Name" class="form-control" required placeholder="Enter trail name..." value="@Model?.Name" />
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <label for="Description" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Description</label>
+                <textarea id="Description" name="Description" class="form-control" rows="4" required placeholder="Describe the trail terrain, scenic highlights..." style="resize: vertical;">@Model?.Description</textarea>
+            </div>
+
+            <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                <div>
+                    <label for="DifficultyLevel" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Difficulty</label>
+                    <select id="DifficultyLevel" name="DifficultyLevel" class="form-control" style="height: auto; padding: 0.9rem 1.25rem;">
+                        @foreach (var val in Enum.GetValues<VerdantArc.Domain.Enums.DifficultyLevel>())
+                        {
+                            <option value="@val">@val</option>
+                        }
+                    </select>
+                </div>
+                <div>
+                    <label for="DistanceKm" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Distance (km)</label>
+                    <input type="number" step="0.1" id="DistanceKm" name="DistanceKm" class="form-control" required placeholder="5.2" value="@Model?.DistanceKm" />
+                </div>
+            </div>
+
+            <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                <div>
+                    <label for="EstimatedDurationMinutes" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Estimated Duration (mins)</label>
+                    <input type="number" id="EstimatedDurationMinutes" name="EstimatedDurationMinutes" class="form-control" required placeholder="120" value="@Model?.EstimatedDurationMinutes" />
+                </div>
+                <div>
+                    <label for="ElevationGainM" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Elevation Gain (m)</label>
+                    <input type="number" id="ElevationGainM" name="ElevationGainM" class="form-control" required placeholder="250" value="@Model?.ElevationGainM" />
+                </div>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <label for="ImageUrl" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Image URL (Unsplash or direct link)</label>
+                <input type="url" id="ImageUrl" name="ImageUrl" class="form-control" placeholder="https://images.unsplash.com/..." value="@Model?.ImageUrl" />
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: flex-end; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+                <a href="/Admin/Trails" class="btn btn-outline">Cancel</a>
+                <button type="submit" class="btn btn-primary">Create Trail</button>
+            </div>
+        </form>
+    </div>
+</div>

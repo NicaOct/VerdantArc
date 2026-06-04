@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\VerdantArc.Application",
+    "\\VerdantArc.Application\\Interfaces",
+    "\\VerdantArc.Application\\Services",
+    "\\VerdantArc.Infrastructure",
+    "\\VerdantArc.Infrastructure\\Repositories",
+    "\\VerdantArc.Web",
+    "\\VerdantArc.Web\\Controllers",
+    "\\VerdantArc.Web\\Controllers\\Api"
+  ],
+  "SelectedNode": "\\VerdantArc.Infrastructure\\Repositories\\Repository.cs",
+  "PreviewInSolutionExplorer": false
+}

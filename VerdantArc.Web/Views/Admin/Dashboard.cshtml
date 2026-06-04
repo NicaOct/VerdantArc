@@ -2,26 +2,29 @@
     ViewData["Title"] = "Admin Dashboard";
 }
 
-<div class="container">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-        <h1 style="font-size: 2.5rem; color: var(--primary-color);">Admin Dashboard</h1>
+<div class="container" style="padding-top: 3rem; padding-bottom: 3rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem;">
+        <h1 style="font-size: 2.75rem; color: var(--primary-color);">Admin Dashboard</h1>
+        <p style="color: var(--text-light); font-weight: 500;">Welcome back, Administrator</p>
     </div>
 
-    <div class="grid">
-        <div class="card glass text-center" style="padding: 2rem;">
-            <h2 style="font-size: 3rem; color: var(--primary-color);">3</h2>
-            <p style="font-weight: 600; font-size: 1.25rem;">Trails</p>
-            <a href="/Admin/Trails" class="btn btn-outline" style="margin-top: 1rem;">Manage Trails</a>
+    <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+        <div class="card glass text-center" style="padding: 2.5rem; border-radius: var(--radius-lg); text-align: center;">
+            <h2 style="font-size: 4rem; color: var(--primary-color); margin-bottom: 0.5rem;">@ViewBag.TrailsCount</h2>
+            <p style="font-weight: 600; font-size: 1.25rem; color: var(--text-color); margin-bottom: 1.5rem;">Trails</p>
+            <a href="/Admin/Trails" class="btn btn-primary" style="display: inline-block; width: 100%;">Manage Trails</a>
         </div>
-        <div class="card glass text-center" style="padding: 2rem;">
-            <h2 style="font-size: 3rem; color: var(--primary-color);">10</h2>
-            <p style="font-weight: 600; font-size: 1.25rem;">Species</p>
-            <a href="/Admin/Species" class="btn btn-outline" style="margin-top: 1rem;">Manage Species</a>
+        
+        <div class="card glass text-center" style="padding: 2.5rem; border-radius: var(--radius-lg); text-align: center;">
+            <h2 style="font-size: 4rem; color: var(--primary-color); margin-bottom: 0.5rem;">@ViewBag.SpeciesCount</h2>
+            <p style="font-weight: 600; font-size: 1.25rem; color: var(--text-color); margin-bottom: 1.5rem;">Species</p>
+            <a href="/Admin/Species" class="btn btn-primary" style="display: inline-block; width: 100%;">Manage Species</a>
         </div>
-        <div class="card glass text-center" style="padding: 2rem;">
-            <h2 style="font-size: 3rem; color: var(--primary-color);">2</h2>
-            <p style="font-weight: 600; font-size: 1.25rem;">Users</p>
-            <button class="btn btn-outline" style="margin-top: 1rem;" disabled>Manage Users (Soon)</button>
+        
+        <div class="card glass text-center" style="padding: 2.5rem; border-radius: var(--radius-lg); text-align: center;">
+            <h2 style="font-size: 4rem; color: var(--primary-color); margin-bottom: 0.5rem;">@ViewBag.UsersCount</h2>
+            <p style="font-weight: 600; font-size: 1.25rem; color: var(--text-color); margin-bottom: 1.5rem;">Users</p>
+            <a href="/Admin/Users" class="btn btn-primary" style="display: inline-block; width: 100%;">Manage Users</a>
         </div>
     </div>
 </div>

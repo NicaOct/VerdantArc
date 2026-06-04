@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VerdantArc.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ad20619eba5649febbc4d8e84febdef6c7bcdad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e00edeb1cbcf7cc543156a1b57ab1bf6ff7ad609")]
 [assembly: System.Reflection.AssemblyProductAttribute("VerdantArc.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VerdantArc.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
